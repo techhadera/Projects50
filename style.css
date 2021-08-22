@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,10 +7,79 @@
 
 body {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  font-family: "Roboto", sans-serif;
+  font-family: "Muli", sans-serif;
+}
+
+.deck {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+}
+
+.card {
+  position: relative;
+  margin: 10px;
+  flex: 0.5;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  color: white;
+
+  transition: flex 0.7s ease-in;
+}
+
+.card-text {
+  position: absolute;
+  margin: 0;
+  bottom: 20px;
+  left: 10px;
+  font-size: 150%;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  opacity: 0;
+}
+
+.card_active .card-text {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.card_active {
+  flex: 5;
+}
+
+.card_berserk {
+  background-image: url("img/berserk.jpg");
+}
+
+.card_casca {
+  background-image: url("img/casca.jpg");
+}
+
+.card_griffit {
+  background-image: url("img/griffit.jpg");
+}
+
+.card_zodd {
+  background-image: url("img/zodd.jpg");
+}
+
+.card_knight {
+  background-image: url("img/knight.jpg");
+}
+
+@media (max-width: 480px) {
+  .deck {
+    width: 100vw;
+  }
+
+  .card:nth-of-type(4),
+  .card:nth-of-type(5) {
+    display: none;
+  }
 }
